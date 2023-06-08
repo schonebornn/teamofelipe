@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: rgb(59, 53, 53);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+  
+    #typing-text {
+      font-size: 24px;
+      font-family: droid 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: rgb(33, 97, 75);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    #photo-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .column {
+      flex-basis: 50%;
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+    
+    .photo {
+      max-width: 400px;
+      max-height: 400px;
+      margin: 10px 10px 10px 0;
+      border: 5px solid rgb(12, 94, 62);
+      display: block;
+      margin-left: 35%; 
+      margin-right: -35%;
+    }
+    
+    .column:nth-child(1) .photo {
+      margin-right: 400px;
+    }
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      color: rgb(63, 45, 45);
+      background-color: #2385ac;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin-left: -20%; 
+      margin-right: -15%;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script>
+    function typeWriter(text, i, interval) {
+      if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(function() { typeWriter(text, i, interval) }, interval);
+      }
+    }
+  </script>
+</head>
+<body>
+  <p id="typing-text"></p>
+  
+  <div id="photo-container">
+    <div class="column">
+    <img src="1.jpg" alt="Foto 1" class="photo">
+    <img src="2.jpg" alt="Foto 2" class="photo">
+    </div>
+    <div class="column">
+    <img src="a4 felipe.jpg" alt="Foto 3" class="photo">
+    <img src="4.jpg" alt="Foto 3" class="photo">
+  </div>
+</div>
+
+<a href="https://drive.google.com/file/d/1dKfyq1bK8N8ZSS9OV2uK_pPmlTfAmU3I/view?usp=sharing" class="button">aperta aqui!!!</a>
+  
+  <script>
+    window.onload = function() {
+      var text = "feliz 1 mes e feliz dia dos namorados, te amo! nossa 1 edicao do jornal Caipiras..aproveite!";
+      var interval = 65; 
+      typeWriter(text, 0, interval);
+    };
+  </script>
+</body>
+</html>
